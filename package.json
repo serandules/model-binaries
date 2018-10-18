@@ -1,0 +1,20 @@
+{
+    "name": "model-binaries",
+    "description": "model-binaries",
+    "version": "0.0.0",
+    "author": {
+        "name": "serandives",
+        "email": "serandives@gmail.com"
+    },
+    "dependencies": {
+        "mongoose": "5.1.8",
+        "logger": "serandules/logger#master",
+        "validators": "serandules/validators#master",
+        "mongins": "serandules/mongins#master",
+      "mongutils": "serandules/mongutils#master"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/serandules/model-binaries.git"
+    }
+}
