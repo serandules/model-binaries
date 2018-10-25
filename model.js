@@ -23,7 +23,7 @@ var binary = Schema({
   }
 }, {collection: 'binaries'});
 
-binary.plugin(mongins);
+binary.plugin(mongins());
 binary.plugin(mongins.user);
 binary.plugin(mongins.createdAt());
 binary.plugin(mongins.updatedAt());
