@@ -3,12 +3,10 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var mongins = require('mongins');
-var mongutils = require('mongutils');
-
 var validators = require('validators');
+var model = require('model');
 
 var types = validators.types;
-var values = validators.values;
 
 var binary = Schema({
   type: {
@@ -28,7 +26,7 @@ binary.plugin(mongins.user);
 binary.plugin(mongins.createdAt());
 binary.plugin(mongins.updatedAt());
 
-mongutils.ensureIndexes(binary, [
+model.ensureIndexes(binary, [
   {createdAt: 1, _id: 1}
 ]);
 

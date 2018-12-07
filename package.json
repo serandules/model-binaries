@@ -9,9 +9,9 @@
     "dependencies": {
         "mongoose": "5.1.8",
         "logger": "serandules/logger#master",
-        "validators": "serandules/validators#master",
         "mongins": "serandules/mongins#master",
-      "mongutils": "serandules/mongutils#master"
+        "validators": "serandules/validators#master",
+        "model": "serandules/model#master"
     },
     "repository": {
         "type": "git",
