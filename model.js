@@ -8,7 +8,7 @@ var model = require('model');
 
 var types = validators.types;
 
-var binary = Schema({
+var schema = Schema({
   type: {
     type: String,
     required: true,
@@ -21,13 +21,22 @@ var binary = Schema({
   }
 }, {collection: 'binaries'});
 
-binary.plugin(mongins());
-binary.plugin(mongins.user);
-binary.plugin(mongins.createdAt());
-binary.plugin(mongins.updatedAt());
+schema.plugin(mongins());
+schema.plugin(mongins.user);
+schema.plugin(mongins.permissions({
+  workflow: 'model'
+}));
+schema.plugin(mongins.status({
+  workflow: 'model'
+}));
+schema.plugin(mongins.visibility({
+  workflow: 'model'
+}));
+schema.plugin(mongins.createdAt());
+schema.plugin(mongins.updatedAt());
 
-model.ensureIndexes(binary, [
+model.ensureIndexes(schema, [
   {createdAt: 1, _id: 1}
 ]);
 
-module.exports = mongoose.model('binaries', binary);
+module.exports = mongoose.model('binaries', schema);
