@@ -22,7 +22,7 @@ var schema = Schema({
 }, {collection: 'binaries'});
 
 schema.plugin(mongins());
-schema.plugin(mongins.user);
+schema.plugin(mongins.user());
 schema.plugin(mongins.permissions({
   workflow: 'model'
 }));
